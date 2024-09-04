@@ -27,8 +27,7 @@ jobs:
           miniforge-version: latest
           miniforge-variant: Mambaforge
       - name: Install Poetry
-        run: |
-          curl -sSL https://install.python-poetry.org | python -
+        uses: snok/install-poetry@v1
       - name: Run tests and build wheels
         run: |
           conda activate test
