@@ -32,6 +32,10 @@ jobs:
           conda activate test
           pytest -vs --log-cli-level=debug
 
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python -
+
 
       - name: Build wheels
         run: |
