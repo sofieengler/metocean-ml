@@ -29,6 +29,9 @@ jobs:
       - name: Install Poetry
         run: |
           curl -sSL https://install.python-poetry.org | python -
+      - name: Add Poetry to PATH
+        run: |
+          echo "$HOME/.poetry/bin:$PATH" >> $GITHUB_ENV
       - name: Run tests and build wheels
         run: |
           conda activate test
@@ -40,7 +43,7 @@ jobs:
         with:
           name: wheels
           path: dist
-
+          
   release:
     name: Release
     runs-on: ubuntu-latest
